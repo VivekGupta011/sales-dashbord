@@ -1,3 +1,8 @@
+// Note:I simplified the Original data by combining multiple entries for each product. This helps in easily seeing the total quantity sold and total revenue for each product, 
+// making it easier to understand overall sales performance.
+
+
+
 const salesData = [
   {
     id: 1,
