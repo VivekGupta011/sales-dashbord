@@ -13931,6 +13931,7 @@ const salesData = [
 
 export default salesData;
 
+
 // Helper function to format date
 export const formatDate = (date) => {
   const [year, month] = date.split("-");
@@ -14006,8 +14007,6 @@ export const getMostPopularItemForMonth = (data, targetYear, targetMonth) => {
   return mostPopularItem;
 };
 
-
-
 // 4. Items Generating Most Revenue Each Month
 export const getMostRevenueItemForMonth = (data, targetYear, targetMonth) => {
   const revenueByMonth = data.reduce((result, sale) => {
@@ -14041,8 +14040,6 @@ export const getMostRevenueItemForMonth = (data, targetYear, targetMonth) => {
 
   return mostRevenueItem;
 };
-
-
 
 // 5. Min, Max, and Average Number of Orders for Most Popular Item
 export const getMinMaxAvgOrdersForMostPopularItem = (
@@ -14079,8 +14076,6 @@ export const getMinMaxAvgOrdersForMostPopularItem = (
 
   return stats;
 };
-
-
 
 // 6. Get Unique Menu Types
 export const getUniqueMenuTypesWithPrices = (data) => {

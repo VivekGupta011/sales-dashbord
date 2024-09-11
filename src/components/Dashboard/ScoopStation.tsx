@@ -1,7 +1,33 @@
 "use client";
-import salesData, { getUniqueMenuTypesWithPrices } from "@/constants/modifiedDataSet";
-import React, { useState } from "react";
-import { FiArrowUpRight, FiDollarSign, FiMoreHorizontal } from "react-icons/fi";
+import salesData from "@/constants/modifiedDataSet";
+import { useState } from "react";
+import { FiArrowUpRight, FiMoreHorizontal } from "react-icons/fi";
+
+interface SaleItem {
+  SKU: string;
+  unitPrice: number;
+}
+
+interface MenuItem {
+  SKU: string;
+  price: number;
+}
+
+type MenuTypesWithPrices = {
+  [key: string]: MenuItem;
+};
+
+const getUniqueMenuTypesWithPrices = (
+  data: SaleItem[]
+): MenuTypesWithPrices => {
+  return data.reduce((result: MenuTypesWithPrices, sale: SaleItem) => {
+    // If SKU is not already in the result, add it
+    if (!result[sale.SKU]) {
+      result[sale.SKU] = { SKU: sale.SKU, price: sale.unitPrice };
+    }
+    return result;
+  }, {});
+};
 
 const ITEMS_PER_PAGE = 10;
 
