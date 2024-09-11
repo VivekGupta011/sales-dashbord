@@ -26,7 +26,7 @@ export const StatCards = ({ selectedDate }: any) => {
 
   const getMonthlyPopular = getMostPopularItemForMonth(salesData, year, month);
 
-  const getOrdersStatics = getMinMaxAvgOrdersForMostPopularItem(
+  const getOrdersStatics:any = getMinMaxAvgOrdersForMostPopularItem(
     salesData,
     getMonthlyPopular
   );
